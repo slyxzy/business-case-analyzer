@@ -1,0 +1,17 @@
+# Environment
+.env
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# ChromaDB local data
+chroma_data/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Uploaded docs (optional — remove this line if you want to track them)
+docs/
