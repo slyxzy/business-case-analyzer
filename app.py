@@ -55,6 +55,12 @@ if analyze_btn and uploaded_files:
         st.session_state["chat_history"] = []
 
     st.success(f"✅ Loaded {len(docs)} docs → {len(chunks)} chunks | {len(all_comments)} comments found")
+    if all_comments:
+        st.markdown("### Extracted reviewer comments")
+        for comment in all_comments:
+            st.markdown(f"- **{comment['author']}** ({comment['date']}): {comment['text']}")
+    else:
+        st.warning("No reviewer comments were extracted from the uploaded Word documents.")
 
 # --- Main area: Tabs ---
 if st.session_state.get("ready"):
